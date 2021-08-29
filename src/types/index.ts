@@ -9,3 +9,6 @@ export interface mySQL_Response {
     insertId: number,
     sqlMessage: string
 }
+export interface ChirpCardProps extends newChirp {
+    isPreview?: boolean
+}
