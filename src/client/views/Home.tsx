@@ -16,7 +16,7 @@ const Home = () => {
     }
     const handlePostChirpClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        fetch('api/chirps', {
+        fetch('/api/chirps', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

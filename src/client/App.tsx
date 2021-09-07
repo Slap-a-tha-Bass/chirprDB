@@ -6,6 +6,11 @@ import Chirps from './views/Chirps';
 import ViewChirp from './views/ViewChirp';
 import Home from './views/Home';
 import EditChirp from './views/EditChirp';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import Donate from './views/Donate';
+
+const stripe = loadStripe('pk_test_51JWlwbFmDISVkVU8c8Pfwiku0g2eXRukfDfdjNyW8336baPHPUwsYg4nm2kuUr4WzzXAgQEVr2k9VDTFN6HtaSHa00PBWeP8Nc');
 
 const App = () => {
 
@@ -26,6 +31,11 @@ const App = () => {
 						</Route>
 						<Route exact path="/chirps/:id/edit">
 							<EditChirp />
+						</Route>
+						<Route exact path="/donate">
+							<Elements stripe={stripe}>
+								<Donate />
+							</Elements>
 						</Route>
 					</Switch>
 				</main>

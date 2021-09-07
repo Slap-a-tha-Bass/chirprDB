@@ -12,3 +12,8 @@ export interface mySQL_Response {
 export interface ChirpCardProps extends newChirp {
     isPreview?: boolean
 }
+export interface DonateProps {
+    id: string,
+    fullName: string,
+    amount: Number
+}
