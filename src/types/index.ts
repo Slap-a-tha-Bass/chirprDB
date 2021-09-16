@@ -17,3 +17,9 @@ export interface DonateProps {
     fullName: string,
     amount: Number
 }
+
+export interface userTable {
+    name?: string,
+    email?: string,
+    password?: string
+}

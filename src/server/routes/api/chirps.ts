@@ -1,6 +1,6 @@
 import * as express from 'express';
-import db_chirps from '../db/queries/chirps';
-import { newChirp } from '../../types';
+import db_chirps from '../../db/queries/chirps';
+import { newChirp } from '../../../types';
 import { v4 as uuid_v4 } from 'uuid';
 
 const router = express.Router();

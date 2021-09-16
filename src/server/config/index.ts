@@ -11,3 +11,7 @@ export const sqlConfig = {
 export const stripeConfig = {
     secret: process.env.STRIPE_KEY
 }
+
+export const jwtConfig = {
+    secret: process.env.JWT_SECRET
+}

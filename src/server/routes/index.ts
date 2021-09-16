@@ -1,10 +1,10 @@
 import * as express from 'express';
-import chirprRouter from './chirps';
-import donateRouter from './donate';
+import apiRouter from './api';
+import authRouter from './auth';
 
 const router = express.Router();
 
-router.use('/chirps', chirprRouter);
-router.use('/donate', donateRouter);
+router.use('/api', apiRouter);
+router.use('/auth', authRouter);
 
 export default router;
