@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <>
             <div className="container">
-                <h3 className="col-md-6 text-center text-primary">Chirpr</h3>
+                <h1 className="col-md-6 text-center text-primary my-2">Chirpr</h1>
                 <form className="form-group col-md-6 bg-primary">
                     <div>
                         <label className="text-light mt-2">Username</label>

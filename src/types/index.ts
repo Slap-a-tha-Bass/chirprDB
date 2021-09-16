@@ -1,3 +1,5 @@
+import { Request } from "express";
+
 export interface newChirp {
     id: string,
     username: string,
@@ -19,7 +21,20 @@ export interface DonateProps {
 }
 
 export interface userTable {
+    id?: string
     name?: string,
     email?: string,
     password?: string
+}
+
+export interface Payload {
+    userid?: number,
+    email?: string,
+    role?: number,
+    iat?: number,
+    exp?: number
+}
+
+export interface ReqUser extends Request {
+    user?: userTable
 }

@@ -1,20 +1,21 @@
 import * as express from 'express';
-import { comparePasswords } from '../../../utils/passwords';
-import db_users from '../../db/queries/users';
+import * as jwt from 'jsonwebtoken';
+import { authenticate } from 'passport';
+import { ReqUser } from '../../../types';
+import { jwtConfig } from '../../config';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', authenticate('local'), async (req: ReqUser, res) => {
     const { email, password } = req.body;
     try {
-        const [userFound] = await db_users.find('email', email);
-        if(userFound && comparePasswords(password, userFound.password)){
-            res.json('Login successful!');
-        } else {
-            return res.status(401).json({ message: "Invalid credentials"});
-        }
+            const TOKEN = jwt.sign({ userid: req.user?.id, email: req.user?.email, role: 1 },
+                jwtConfig.secret,
+                { expiresIn: jwtConfig.expires }
+            );
+            res.json(TOKEN);
     } catch (error) {
-        res.status(500).json({ message: "Check login.ts"});
+        res.status(500).json({ message: "Check login.ts" });
     }
 });
 

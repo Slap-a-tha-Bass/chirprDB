@@ -9,6 +9,8 @@ import EditChirp from './views/EditChirp';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Donate from './views/Donate';
+import Register from './views/Register';
+import Login from './views/Login';
 
 const stripe = loadStripe('pk_test_51JWlwbFmDISVkVU8c8Pfwiku0g2eXRukfDfdjNyW8336baPHPUwsYg4nm2kuUr4WzzXAgQEVr2k9VDTFN6HtaSHa00PBWeP8Nc');
 
@@ -36,6 +38,12 @@ const App = () => {
 							<Elements stripe={stripe}>
 								<Donate />
 							</Elements>
+						</Route>
+						<Route exact path="/register">
+							<Register />
+						</Route>
+						<Route exact path="/login">
+							<Login />
 						</Route>
 					</Switch>
 				</main>
