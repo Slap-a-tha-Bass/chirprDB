@@ -11,6 +11,9 @@ import { Elements } from '@stripe/react-stripe-js';
 import Donate from './views/Donate';
 import Register from './views/Register';
 import Login from './views/Login';
+import PrivateRoute from './components/PrivateRoute';
+import Profile from './views/Profile';
+import Invalid from './views/Invalid';
 
 const stripe = loadStripe('pk_test_51JWlwbFmDISVkVU8c8Pfwiku0g2eXRukfDfdjNyW8336baPHPUwsYg4nm2kuUr4WzzXAgQEVr2k9VDTFN6HtaSHa00PBWeP8Nc');
 
@@ -44,6 +47,12 @@ const App = () => {
 						</Route>
 						<Route exact path="/login">
 							<Login />
+						</Route>
+						<PrivateRoute exact path="/profile">
+							<Profile />
+						</PrivateRoute>
+						<Route exact path="/invalid">
+							<Invalid />
 						</Route>
 					</Switch>
 				</main>

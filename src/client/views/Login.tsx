@@ -1,31 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import { userTable } from '../../types';
+import { apiService } from '../../utils/api-service';
 
 const Login = () => {
-
+    const history = useHistory();
     const [email, setEmail] = useState<userTable['email']>('');
     const [password, setPassword] = useState<userTable['password']>('');
 
     const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        fetch('/api/users', {
-            // method: 'POST',
-            // headers: {
-            //     'Content-Type' : 'application/json'
-            // },
-            // body: JSON.stringify(data)
-        })
-            .then(res => res.json())
+        apiService('/api/users')
             .then(data => {
-                setEmail(data)
-                setPassword(data)
+                setEmail('')
+                setPassword('')
+                history.push('/profile');
             })
+            .catch(() => history.push('/invalid'))
     }
 
     return (
         <>
             <div className="container">
-                <h1 className="col-md-6 text-center text-primary my-2">Chirpr</h1>
+                <h1 className="col-md-6 text-center text-primary my-2">Login</h1>
                 <form className="form-group col-md-6 bg-primary">
                     <div>
                         <label className="text-light mt-2">Email</label>
@@ -36,7 +33,7 @@ const Login = () => {
                         <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     <div>
-                        <button className="btn btn-outline-light m-2" onClick={handleLogin} >Login</button>
+                        <button className="btn btn-outline-light m-2" onClick={handleLogin} >Submit</button>
                     </div>
                 </form>
             </div>

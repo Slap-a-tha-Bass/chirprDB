@@ -14,7 +14,7 @@ const Register = () => {
     return (
         <>
             <div className="container">
-                <h1 className="col-md-6 text-center text-primary my-2">Chirpr</h1>
+                <h1 className="col-md-6 text-center text-primary my-2">Register</h1>
                 <form className="form-group col-md-6 bg-primary">
                     <div>
                         <label className="text-light mt-2">Email</label>
@@ -25,7 +25,7 @@ const Register = () => {
                         <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     <div>
-                        <button className="btn btn-outline-light m-2" onClick={handleSignUp} >Sign Up</button>
+                        <button className="btn btn-outline-light m-2" onClick={handleSignUp} >Submit</button>
                     </div>
                 </form>
             </div>
