@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import { userTable } from '../../types';
+import { apiService } from '../../utils/api-service';
 
 const Register = () => {
+    const history = useHistory();
 
     const [email, setEmail] = useState<userTable['email']>('');
     const [password, setPassword] = useState<userTable['password']>('');
 
     const handleSignUp = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        fetch('/auth/register')
+        apiService('/auth/register', 'POST', { email, password })
+            .then(data => {
+                setEmail('')
+                setPassword('')
+            })
+            .catch(() => alert('Login email already in use'))
+            history.push('/auth/success')
     }
 
     return (

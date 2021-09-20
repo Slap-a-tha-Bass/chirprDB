@@ -13,7 +13,7 @@ router.post('/', authenticate('local'), async (req: ReqUser, res) => {
                 jwtConfig.secret,
                 { expiresIn: jwtConfig.expires }
             );
-            res.json(TOKEN);
+            res.json({ TOKEN });
     } catch (error) {
         res.status(500).json({ message: "Check login.ts" });
     }

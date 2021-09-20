@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { userTable } from '../../types';
 import { apiService } from '../../utils/api-service';
+import { token } from '../components/PrivateRoute';
 
 const Login = () => {
     const history = useHistory();
@@ -10,13 +11,15 @@ const Login = () => {
 
     const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        apiService('/api/users')
+        apiService('/auth/login', 'POST', { email, password })
             .then(data => {
-                setEmail('')
-                setPassword('')
+                localStorage.setItem(token, data.TOKEN),
                 history.push('/profile');
             })
-            .catch(() => history.push('/invalid'))
+            .catch((error) => {
+                console.log(error, error.message);
+                history.push('/invalid')
+            })
     }
 
     return (

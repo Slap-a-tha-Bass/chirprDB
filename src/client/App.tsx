@@ -14,6 +14,7 @@ import Login from './views/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './views/Profile';
 import Invalid from './views/Invalid';
+import AuthSuccess from './views/AuthSuccess';
 
 const stripe = loadStripe('pk_test_51JWlwbFmDISVkVU8c8Pfwiku0g2eXRukfDfdjNyW8336baPHPUwsYg4nm2kuUr4WzzXAgQEVr2k9VDTFN6HtaSHa00PBWeP8Nc');
 
@@ -53,6 +54,9 @@ const App = () => {
 						</PrivateRoute>
 						<Route exact path="/invalid">
 							<Invalid />
+						</Route>
+						<Route exact path="/auth/success">
+							<AuthSuccess />
 						</Route>
 					</Switch>
 				</main>
