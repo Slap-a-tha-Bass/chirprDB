@@ -17,7 +17,4 @@ CREATE TABLE users (
     updated_at DATETIME ON UPDATE NOW()
 );
 
-SELECT * FROM chirps;
-INSERT INTO chirps (id, username, message) VALUES ('62d48ef1-ba57-4616-9807-e2063a4b99c3', 'Slap-a-tha-Bass', 'Yo, what is up chirpFam?');
-CREATE user 'chirprapp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'chirprapp';
-GRANT ALL PRIVILEGES ON chirpr.* TO 'chirprapp'@'localhost';
+
