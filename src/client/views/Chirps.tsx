@@ -13,7 +13,7 @@ const Chirps = () => {
 
     return (
           <div>
-              <h3 className="text-primary text-center col-md-6">All Chirps</h3>
+              <h3 className="text-primary text-center col-md-6 d-flex justify-content-center mt-2">Top Chirps</h3>
               {chirps.map((chirp) => (
                   <ChirpCard {...chirp} key={`${chirp.id}`} isPreview />
               ))}

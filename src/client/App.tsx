@@ -23,7 +23,7 @@ const App = () => {
 	return (
 		<>
 			<Router>
-				<main className="container m-2">
+				<main className="container">
 					<NavBar />
 					<Switch>
 						<Route exact path="/">
@@ -35,14 +35,14 @@ const App = () => {
 						<Route exact path="/chirps/:id">
 							<ViewChirp />
 						</Route>
-						<Route exact path="/chirps/:id/edit">
+						<PrivateRoute exact path="/chirps/:id/edit">
 							<EditChirp />
-						</Route>
-						<Route exact path="/donate">
+						</PrivateRoute>
+						<PrivateRoute exact path="/donate">
 							<Elements stripe={stripe}>
 								<Donate />
 							</Elements>
-						</Route>
+						</PrivateRoute>
 						<Route exact path="/register">
 							<Register />
 						</Route>

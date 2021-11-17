@@ -18,15 +18,15 @@ const ChirpCard = (props: ChirpCardProps) => {
         }
     }
     return (
-        <div className="card col-md-6 p-0 bg-light mt-3">
+        <div className="card col-md-6 shadow rounded p-2 bg-light mt-3">
             <div className="card-header text-primary font-weight-bold">{props.username}</div>
             <div className="card-body">
-                <div className="card-text bg-primary text-light border border-info rounded px-2">{props.message}</div>
+                <div className="card-text text-primary rounded px-2">{props.message}</div>
             </div>
             <div className="d-flex justify-content-around mb-2">
-                {props.isPreview && <Link to={`/chirps/${props.id}`} className="btn btn-outline-primary">View Chirp</Link>}     
-                {props.isPreview || <Link to={`/chirps/${props.id}/edit`} className="btn btn-outline-primary">Edit Chirp</Link>}
-                {props.isPreview || <button onClick={handleDeleteClick} className="btn btn-outline-primary">Delete Chirp</button>}
+                {props.isPreview && <Link to={`/chirps/${props.id}`} className="btn btn-outline-primary btn-sm">View Chirp</Link>}     
+                {props.isPreview || <Link to={`/chirps/${props.id}/edit`} className="btn btn-outline-primary btn-sm">Edit Chirp</Link>}
+                {props.isPreview || <button onClick={handleDeleteClick} className="btn btn-outline-primary btn-sm">Delete Chirp</button>}
             </div>
         </div>
     )

@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <div className="col-md-6 d-flex justify-content-between pt-2">
+        <div className="d-flex justify-content-between align-items-center col-md-6 mt-2">
             <div>
-                <Link to='/' className="text-primary btn-sm">Home</Link>
-                <Link to='/chirps' className="text-primary ml-2 btn-sm">Chirps</Link>
-                <Link to='/profile' className="text-primary ml-2 btn-sm">Profile</Link>
+                <Link to='/' className="text-primary h4 mx-2">C</Link>
+                <Link to='/chirps' className="text-primary btn-sm">Chirps</Link>
+                <Link to='/profile' className="text-primary btn-sm">Profile</Link>
             </div>
             <div>
-                <Link to='/donate' className="text-primary ml-2 btn-sm">Donate</Link>
-                <Link to='/register' className="text-primary ml-2 btn-sm">Register</Link>
-                <Link to='/login' className="text-primary ml-2 btn-sm">Login</Link>
+                <Link to='/donate' className="text-primary h4 mx-2">$</Link>
+                <Link to='/register' className="text-primary btn-sm">Register</Link>
+                <Link to='/login' className="text-primary btn-sm">Login</Link>
             </div>
         </div>
     )

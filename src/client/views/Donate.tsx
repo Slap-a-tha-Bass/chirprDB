@@ -24,10 +24,10 @@ const Donate = () => {
         if (error) {
             console.log(error);
         } else {
-            const res = await fetch ('/api/donate', {
+            const res = await fetch('/api/donate', {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ amount, paymentMethod })
             });
@@ -41,6 +41,7 @@ const Donate = () => {
         <>
             <div className="container">
                 <div className="col-md-6">
+                    <h3 className="text-primary text-center mt-2">Donate</h3>
                     <form className="form-group bg-primary border rounded mt-3 p-3">
                         <label className="text-light" placeholder="As it appears on CC">Full Name</label>
                         <input type="text" className="form-control" value={fullName} onChange={e => setFullName(e.target.value)} />
